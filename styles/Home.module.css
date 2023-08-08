@@ -36,3 +36,20 @@
 .button:hover {
   background-color: #0056b3;
 }
+
+/* styles/Home.module.css */
+
+.consentBanner {
+  background-color: #eee;
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+
+.consentBanner button {
+  margin-left: 1rem;
+}
+
