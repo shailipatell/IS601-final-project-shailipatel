@@ -13,8 +13,8 @@ export default async function handler(req, res) {
   
     // Add subscriber to Mailchimp
     try {
-      const LIST_ID = 'ab909d29c8';
-      const API_KEY = '2279e48c08f6175027cdbffd9e599442-us11';
+      const LIST_ID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID;
+      const API_KEY = process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY;
       const DATACENTER = API_KEY.split('-')[1];
   
       const response = await fetch(`https://${DATACENTER}.api.mailchimp.com/3.0/lists/${LIST_ID}/members`, {
