@@ -8,6 +8,7 @@ export default function Home() {
   const [message, setMessage] = useState('');
   const [hasUserGivenConsent, setHasUserGivenConsent] = useState(false);
   const [ga4Loaded, setGa4Loaded] = useState(false);
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
   useEffect(() => {
     // Load the user's consent from local storage.
@@ -68,7 +69,29 @@ export default function Home() {
     }
 
     setEmail('');
+    setIsSubscribed(true);
     setMessage('Success! 🎉 You are now subscribed.');
+  };
+
+  const unsubscribe = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch('/api/unsubscribe', {
+      body: JSON.stringify({ email }),
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+    });
+
+    const { error } = await response.json();
+
+    if (error) {
+      setMessage(`Oops! ${error}`);
+      return;
+    }
+
+    setEmail('');
+    setIsSubscribed(false);
+    setMessage('You have successfully unsubscribed.');
   };
 
   return (
@@ -94,25 +117,41 @@ export default function Home() {
       </section>
 
       <section className={styles.section}>
-        <p>Want to get in touch or see my resume? Subscribe below!</p>
-        <form onSubmit={subscribe}>
-          <input 
-            type="email" 
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            placeholder="Your email address"
-          />
-          <button type="submit">Subscribe</button>
-        </form>
+        <p>Subscribe to our newsletter to receive updates and news. We respect your privacy and only send content related to our services.</p>
+      
+        {!isSubscribed ? (
+          <form onSubmit={subscribe}>
+            <input 
+              type="email" 
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Your email address"
+              required
+            />
+            <div className={styles.checkboxContainer}>
+              <input type="checkbox" required />
+              <label>
+                I agree to the <Link href="/privacy">privacy policy</Link> and understand how my data will be used.
+              </label>
+            </div>
+            <button type="submit">Subscribe</button>
+          </form>
+        ) : (
+          <form onSubmit={unsubscribe}>
+            <button type="submit">Unsubscribe</button>
+          </form>
+        )}
+
         {message && <p>{message}</p>}
       </section>
 
       <footer className={styles.footer}>
-  {/* Link to the privacy policy */}
-  <Link href="/privacy">Privacy Policy</Link>
-</footer>
+        <Link href="/privacy">Privacy Policy</Link>
+      </footer>
 
     </div>
   );
 }
+
+
 
