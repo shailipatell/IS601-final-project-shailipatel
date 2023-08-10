@@ -1,10 +1,14 @@
 import Link from 'next/link';
 import styles from '../styles/Privacy.module.css';
+import NavBar from '../components/Navbar';
 
 export default function PrivacyPolicy() {
   return (
+    <div><NavBar/>
     <div className={styles.container}>
-      <h1 className={styles.title}>Privacy Policy</h1>
+    <div className={styles.card}>
+      
+      {/* <h1 className={styles.title}>Privacy Policy</h1> */}
       
       <h2 className={styles.subTitle}>1. What data we collect:</h2>
       <p className={styles.text}>We collect the following data from our users:</p>
@@ -40,10 +44,12 @@ export default function PrivacyPolicy() {
       <h2 className={styles.subTitle}>5. Contacting us:</h2>
       <p className={styles.text}>
         If you have any queries related to your data, wish to amend it, or request its deletion, please contact us at:
-        <a className={styles.link} href="mailto:example@example.com">example@example.com</a>
+        <a className={styles.link} href="mailto:example@example.com">shaili@example.com</a>
       </p>
       
       <Link href="/">Back to Home</Link>
+    </div>
+    </div>
     </div>
   );
 }

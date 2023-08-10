@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    /* justify-content: space-between; */
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    transition: background 0.3s;
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.brand {
+    font-weight: bold;
+}
+
+.menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: rgb(24, 23, 23);
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #FFA500; /* Orange color for hover, can change as per brand colors */
+}
