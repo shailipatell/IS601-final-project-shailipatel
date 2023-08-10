@@ -16,7 +16,7 @@
 //     </div>
 //   );
 // }
-import NavBar from '../components/Navbar';
+import NavBar from '../components/Navigationbar';
 import styles from '../styles/About.module.css';
 
 export default function About() {

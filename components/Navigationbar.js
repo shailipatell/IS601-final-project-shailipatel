@@ -1,12 +1,12 @@
 // components/NavBar.js
 import Link from 'next/link';
-import styles from './NavBar.module.css'; // Create a corresponding CSS module
+import styles from './Navigationbar.module.css'; // Create a corresponding CSS module
 
 export default function NavBar() {
     return (
         <nav className={styles.navbar}>
             <div className={styles.brand}>
-             Shaili's Portfolio                
+             Shaili's Portfolio               
             </div>
             <div className={styles.menu}>
                 <a href="/">          Home</a>

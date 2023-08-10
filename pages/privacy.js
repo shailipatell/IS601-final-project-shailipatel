@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from '../styles/Privacy.module.css';
-import NavBar from '../components/Navbar';
+import NavBar from '../components/Navigationbar';
 
 export default function PrivacyPolicy() {
   return (
