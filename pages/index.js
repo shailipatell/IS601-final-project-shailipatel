@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css';
 import { logPageView } from '../lib/ga4';
-import NavBar from '../components/Navbar';
+import NavBar from './components/NavBar';
 
 export default function Home() {
     const [email, setEmail] = useState('');
