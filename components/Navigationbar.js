@@ -12,6 +12,7 @@ export default function NavBar() {
                 <a href="/">          Home</a>
                 <a href="about">About</a>
                 <a href="privacy">Privacy Policy</a>
+                <a href="projects">Projects</a>
             </div>
         </nav>
     );
