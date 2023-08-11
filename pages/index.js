@@ -107,8 +107,9 @@ export default function Home() {
             <div className={styles.homeContainer}>
       <section className={styles.hero}>
         <h1>Welcome to My Portfolio</h1>
-        <p>Discover my journey in the world of computer science, my passion, projects, and more. Currently pursuing a Master's in Computer Science and passionate about technology.</p>
-        <Link href="/projects">
+        <p>During my journey, I've delved into various programming languages, from Java to C++, and have tackled diverse projects, including web development, machine learning, and software engineering.
+My passion for technology fuels my drive to stay updated with the latest industry trends and advancements, propelling me to contribute innovative ideas to the field.
+With a solid foundation and a relentless curiosity, I'm excited to continue pushing the boundaries of what's possible in the ever-evolving landscape of computer science.</p><Link href="/projects">
           <button className={styles.button}>View My Projects</button>
         </Link>
       </section>
